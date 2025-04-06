@@ -5,10 +5,10 @@ window.addEventListener("load", function () {
 
     video = document.getElementById("player1");
 
-    // Disable autoplay and loop (JS-side)
+    // Disable autoplay and loop 
     video.autoplay = false;
     video.loop = false;
-    video.load(); // Re-initialize video without autoplay
+    video.load(); 
 
     // Set initial volume display
     document.getElementById("volume").innerText = `${Math.round(video.volume * 100)}%`;
@@ -50,26 +50,26 @@ window.addEventListener("load", function () {
 
     // Mute button
     document.querySelector("#mute").addEventListener("click", function () {
-        video.muted = !video.muted; // Toggle mute
+        video.muted = !video.muted; 
         console.log(video.muted ? "Video muted" : "Video unmuted");
     });
 	// Volume Slider
     const volumeSlider = document.querySelector("#slider");
     volumeSlider.addEventListener("input", function () {
-        const newVolume = volumeSlider.value / 100; // Convert slider value (0-100) to a range of 0-1
-        video.volume = newVolume; // Set the video's volume
-        document.getElementById("volume").innerText = `${Math.round(newVolume * 100)}%`; // Update volume display
+        const newVolume = volumeSlider.value / 100; 
+        video.volume = newVolume; 
+        document.getElementById("volume").innerText = `${Math.round(newVolume * 100)}%`; 
         console.log(`Volume changed to ${Math.round(newVolume * 100)}%`);
     });
 	// Styled (Old School)
     document.querySelector("#vintage").addEventListener("click", function () {
-        video.classList.add("oldSchool"); // Add the oldSchool class to the video element
+        video.classList.add("oldSchool"); 
         console.log("Applied oldSchool styling");
     });
 
     // Original
     document.querySelector("#orig").addEventListener("click", function () {
-        video.classList.remove("oldSchool"); // Remove the oldSchool class from the video element
+        video.classList.remove("oldSchool"); 
         console.log("Removed oldSchool styling");
     });
 });
